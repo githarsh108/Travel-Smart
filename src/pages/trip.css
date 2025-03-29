@@ -1,0 +1,406 @@
+/* trip.css */
+.trip-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header Section */
+  .trip-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #001e94, #001963);
+    color: white !important;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .trip-title h1 {
+    font-size: 28px;
+    margin: 0;
+    color: white !important;
+    font-weight: 600;
+  }
+  
+  .destination {
+    display: flex;
+    color: white !important;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  .destination svg {
+    margin-right: 8px;
+  }
+  
+  .trip-actions button,
+  .trip-actions a {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .pdf-button {
+    background-color: #28a745;
+  }
+  
+  .pdf-button:hover {
+    background-color: #218838;
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+  }
+  
+  .edit-button:hover {
+    background-color: #0069d9;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Tabs */
+  .trip-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    padding: 10px 20px;
+  }
+  
+  .trip-tabs button {
+    padding: 12px 25px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .trip-tabs button.active {
+    color: #ff6f61;
+    border-bottom: 3px solid #ff6f61;
+    font-weight: 600;
+  }
+  
+  .trip-tabs button:hover {
+    color: #ff8e53;
+  }
+  
+  /* Content Section */
+  .trip-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  /* Overview Section */
+  .trip-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .trip-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .info-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .info-icon {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-right: 15px;
+  }
+  
+  .info-content h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .info-content p {
+    margin: 5px 0 0;
+    color: #666;
+  }
+  
+  .info-subtitle {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .trip-details-section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .activities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .activity-tag {
+    padding: 8px 15px;
+    background-color: #ff8e53;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .trip-notes {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    color: #555;
+  }
+  
+  .transportation-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .transportation-icon {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-right: 15px;
+  }
+  
+  /* Itinerary Section */
+  .trip-itinerary h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .itinerary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .itinerary-header button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .itinerary-header button:disabled {
+    background-color: #ccc;
+  }
+  
+  .itinerary-days {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .itinerary-day {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .day-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .day-header h3 {
+    font-size: 18px;
+    color: #ff6f61;
+  }
+  
+  .day-activities {
+    margin-top: 15px;
+  }
+  
+  .activity-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .daily-total {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  /* Expenses Section */
+  .trip-expenses {
+    padding: 20px;
+  }
+  
+  .expenses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .budget-summary {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .budget-item {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .budget-amount {
+    font-weight: 600;
+    color: #28a745;
+  }
+  
+  .spent-amount {
+    font-weight: 600;
+    color: #ff6f61;
+  }
+  
+  .remaining-amount {
+    font-weight: 600;
+  }
+  
+  .remaining-amount.negative {
+    color: #dc3545;
+  }
+  
+  .add-expense-button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .expense-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .save-expense-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .expenses-table th,
+  .expenses-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .expenses-table th {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .category-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .category-badge.accommodation { background-color: #007bff; }
+  .category-badge.transportation { background-color: #ff6f61; }
+  .category-badge.food { background-color: #28a745; }
+  .category-badge.activities { background-color: #ff8e53; }
+  .category-badge.shopping { background-color: #6f42c1; }
+  .category-badge.other { background-color: #6c757d; }
+  
+  .delete-expense-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+  }
+  
+  /* Map Section */
+  .trip-map {
+    padding: 20px;
+  }
+  
+  .map-header h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .map-container {
+    height: 400px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .map-info {
+    margin-top: 15px;
+    color: #666;
+  }

@@ -19,8 +19,9 @@ const Navbar = () => {
     <nav className={`navbar ${darkMode ? "dark" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-icon">✈️</span>
-          <span className="logo-text">TravelPlanner</span>
+          <span className="logo-icon"></span>
+          <img src="/touristbuddy.png" className="logo-icon" alt="" />
+          {/* <span className="logo-text">TouristBuddy</span> */}
         </Link>
 
         <div className="navbar-right">

@@ -107,13 +107,52 @@ const PlanTravel = () => {
           return false
         }
         return true
+      case 4:
+        if (formData.activities.length === 0) {
+          setError("Please select at least one activity")
+          return false
+        }
+        return true
       default:
         return true
     }
   }
 
+  const validateAllSteps = () => {
+    if (!formData.name || !formData.destination) {
+      setError("Please fill in all required fields")
+      setStep(1)
+      return false
+    }
+    if (!formData.startDate || !formData.endDate) {
+      setError("Please select both start and end dates")
+      setStep(2)
+      return false
+    }
+    if (new Date(formData.startDate) > new Date(formData.endDate)) {
+      setError("End date must be after start date")
+      setStep(2)
+      return false
+    }
+    if (!formData.budget) {
+      setError("Please enter your budget")
+      setStep(3)
+      return false
+    }
+    if (formData.activities.length === 0) {
+      setError("Please select at least one activity")
+      setStep(4)
+      return false
+    }
+    return true
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (!validateAllSteps()) {
+      return
+    }
 
     try {
       if (isEditing) {
@@ -227,7 +266,7 @@ const PlanTravel = () => {
             </h2>
 
             <div className="form-group">
-              <label htmlFor="budget">Budget (USD)*</label>
+              <label htmlFor="budget">Budget (INR)*</label>
               <input
                 type="number"
                 id="budget"
@@ -245,7 +284,7 @@ const PlanTravel = () => {
               <select id="accommodation" name="accommodation" value={formData.accommodation} onChange={handleChange}>
                 <option value="hotel">Hotel</option>
                 <option value="hostel">Hostel</option>
-                <option value="apartment">Apartment/Airbnb</option>
+                <option value="apartment">Cottage</option>
                 <option value="resort">Resort</option>
                 <option value="camping">Camping</option>
                 <option value="other">Other</option>
@@ -259,7 +298,6 @@ const PlanTravel = () => {
                 <option value="train">Train</option>
                 <option value="car">Car</option>
                 <option value="bus">Bus</option>
-                <option value="cruise">Cruise</option>
                 <option value="other">Other</option>
               </select>
             </div>
@@ -273,7 +311,7 @@ const PlanTravel = () => {
             </h2>
 
             <div className="form-group">
-              <label>Interested Activities</label>
+              <label>Interested Activities* <small>(select at least one)</small></label>
               <div className="checkbox-group">
                 <label className="checkbox-label">
                   <input
@@ -409,5 +447,4 @@ const PlanTravel = () => {
   )
 }
 
-export default PlanTravel
-
+export default PlanTravel 
